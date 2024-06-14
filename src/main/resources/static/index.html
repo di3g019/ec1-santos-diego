@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Edades de Hermanos</title>
+</head>
+<body>
+<h2>Comparador de Edades de Hermanos</h2>
+<p>Edad del primer hermano: <input type="number" id="edad1"></p>
+<p>Edad del segundo hermano: <input type="number" id="edad2"></p>
+<button onclick="calcularDiferencia()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+    function calcularDiferencia() {
+        var edad1 = parseInt(document.getElementById("edad1").value);
+        var edad2 = parseInt(document.getElementById("edad2").value);
+
+        if (isNaN(edad1) || isNaN(edad2)) {
+            alert("Por favor, ingrese valores numéricos válidos para las edades.");
+            return;
+        }
+
+        var diferencia = Math.abs(edad1 - edad2);
+        var mayor = Math.max(edad1, edad2);
+        var mensaje = "El hermano mayor tiene " + mayor + " años y la diferencia de edad con el menor es de " + diferencia + " años.";
+
+        document.getElementById("resultado").innerText = mensaje;
+    }
+</script>
+</body>
+</html>
